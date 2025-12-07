@@ -6,7 +6,7 @@ import { SymbolDef, SymbolType, ProbabilityWeights, RTPMode, Achievement, Leader
 export const REEL_COUNT = 5;
 export const ROW_COUNT = 4; // Visible rows
 export const MIN_BET = 10;
-export const MAX_BET = 200;
+export const MAX_BET = 2000;
 export const BET_STEP = 10;
 export const MULTIPLIER_LEVELS = [1, 2, 3, 5];
 export const MAX_ADS = 20;
@@ -18,11 +18,11 @@ export const SYMBOLS: SymbolDef[] = [
   { id: 'S_A', name: '🀄', value: 0.05, type: SymbolType.LOW, color: 'bg-slate-200', textColor: 'text-green-700' },
   { id: 'S_B', name: '🀐', value: 0.05, type: SymbolType.LOW, color: 'bg-slate-200', textColor: 'text-blue-700' },
   { id: 'S_C', name: '🀙', value: 0.05, type: SymbolType.LOW, color: 'bg-slate-200', textColor: 'text-red-600' },
-  { id: 'S_D', name: '🀇', value: 0.1, type: SymbolType.LOW, color: 'bg-slate-200', textColor: 'text-orange-600' },
-  { id: 'S_E', name: '🀅', value: 0.2, type: SymbolType.HIGH, color: 'bg-emerald-100', textColor: 'text-green-600' },
-  { id: 'S_F', name: '🀁', value: 0.4, type: SymbolType.HIGH, color: 'bg-blue-100', textColor: 'text-blue-600' },
-  { id: 'S_G', name: '🀂', value: 0.8, type: SymbolType.HIGH, color: 'bg-yellow-100', textColor: 'text-yellow-700' },
-  { id: 'S_H', name: '🀃', value: 1.5, type: SymbolType.HIGH, color: 'bg-red-100', textColor: 'text-red-700' },
+  { id: 'S_D', name: '🀇', value: 0.01, type: SymbolType.LOW, color: 'bg-slate-200', textColor: 'text-orange-600' },
+  { id: 'S_E', name: '🀅', value: 0.02, type: SymbolType.HIGH, color: 'bg-emerald-100', textColor: 'text-green-600' },
+  { id: 'S_F', name: '🀁', value: 0.04, type: SymbolType.HIGH, color: 'bg-blue-100', textColor: 'text-blue-600' },
+  { id: 'S_G', name: '🀂', value: 0.08, type: SymbolType.HIGH, color: 'bg-yellow-100', textColor: 'text-yellow-700' },
+  { id: 'S_H', name: '🀃', value: 0.8, type: SymbolType.HIGH, color: 'bg-red-100', textColor: 'text-red-700' },
   { id: 'WILD', name: 'WILD', value: 0, type: SymbolType.WILD, color: 'bg-yellow-500', textColor: 'text-yellow-900' },
   { id: 'SCATTER', name: '夺', value: 0, type: SymbolType.SCATTER, color: 'bg-red-600', textColor: 'text-gold' },
 ];
@@ -120,13 +120,13 @@ export const WHEEL_SEGMENTS: WheelSegment[] = [
 ];
 
 export const CHECK_IN_REWARDS = [
-    { day: 1, amount: 100 },
-    { day: 2, amount: 250 },
-    { day: 3, amount: 500 },
-    { day: 4, amount: 1000 },
-    { day: 5, amount: 2500 },
-    { day: 6, amount: 5000 },
-    { day: 7, amount: 10000 },
+    { day: 1, amount: 50 },
+    { day: 2, amount: 100 },
+    { day: 3, amount: 150 },
+    { day: 4, amount: 200 },
+    { day: 5, amount: 250 },
+    { day: 6, amount: 300 },
+    { day: 7, amount: 500 },
 ];
 
 export const PIGGY_BANK_RATE = 0.1; // 10% of bet goes to piggy bank (simulated accumulation)
