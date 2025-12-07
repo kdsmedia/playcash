@@ -21,7 +21,6 @@ export const Tile: React.FC<TileProps> = ({ data, className = '' }) => {
     content = (
       <div className="flex flex-col items-center justify-center p-1 w-full h-full bg-yellow-500 border-4 border-yellow-300 rounded-lg animate-pulse">
          <span className="text-2xl font-black text-red-900 drop-shadow-md">WILD</span>
-         <span className="text-[10px] text-yellow-900 font-bold tracking-widest">INGOT</span>
       </div>
     );
   } else if (def.type === SymbolType.SCATTER) {
