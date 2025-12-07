@@ -391,13 +391,13 @@ const App: React.FC = () => {
              playSound('scatter');
              alert("Cooldown Lucky Wheel dihilangkan! Silakan putar sekarang.");
         } else if (adRewardType === 'RESCUE_FUND') {
-             const rescueAmount = 500;
+             const rescueAmount = 100;
              setState(prev => ({ ...prev, balance: prev.balance + rescueAmount }));
              setTransactions(prev => [{ id: Math.random().toString(36).substr(2, 9), type: 'AD_REWARD', amount: rescueAmount, details: 'RESCUE FUND', date: new Date().toISOString(), displayDate: new Date().toLocaleString(), status: 'SUCCESS' }, ...prev]);
              playSound('win');
              setShowRescueModal(false);
-             setMessage("RESCUE FUND: +500");
-             alert("Dana Darurat 500 Koin Diterima!");
+             setMessage("RESCUE FUND: +100");
+             alert("Dana Darurat Rp100 Diterima!");
         }
 
         if (audioRef.current && isMusicPlaying) audioRef.current.play().catch(() => {});
@@ -794,11 +794,11 @@ const App: React.FC = () => {
 
       setState(prev => ({
           ...prev,
-          balance: prev.balance + 10000,
+          balance: prev.balance + 1000,
           hasRedeemedReferral: true
       }));
-       setTransactions(prev => [{ id: Math.random().toString(36).substr(2, 9), type: 'REFERRAL_BONUS', amount: 10000, date: new Date().toISOString(), displayDate: new Date().toLocaleString(), status: 'SUCCESS' }, ...prev]);
-       alert("Kode Referral Berhasil! Anda mendapatkan 10.000");
+       setTransactions(prev => [{ id: Math.random().toString(36).substr(2, 9), type: 'REFERRAL_BONUS', amount: 1000, date: new Date().toISOString(), displayDate: new Date().toLocaleString(), status: 'SUCCESS' }, ...prev]);
+       alert("Kode Referral Berhasil! Anda mendapatkan 1000");
        setReferralInput('');
        setActiveModal(null);
   };
@@ -984,7 +984,7 @@ const App: React.FC = () => {
                   </div>
                   <div className="text-center">
                     <h1 className="text-4xl font-black text-[#ffb703] tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">PLAYCASH</h1>
-                    <p className="text-gray-300 mt-2 font-bold tracking-wide">HIGH VOLATILITY SLOT</p>
+                    <p className="text-gray-300 mt-2 font-bold tracking-wide">HIGH VOLATILITY GAME</p>
                   </div>
                   <button onClick={handleLogin} className="w-full bg-white text-gray-800 font-bold py-4 rounded-xl shadow-xl flex items-center justify-center gap-3 hover:bg-gray-100 transition-transform active:scale-95">
                       <svg className="w-6 h-6" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path fill="#FBBC05" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
@@ -1080,9 +1080,9 @@ const App: React.FC = () => {
                <div className="absolute top-0 right-0 p-2"><button onClick={() => setShowRescueModal(false)}><X size={20} className="text-gray-500" /></button></div>
                <AlertTriangle size={48} className="text-red-500 mx-auto mb-3 animate-bounce" />
                <h2 className="text-xl font-black text-white mb-2">SALDO HABIS?</h2>
-               <p className="text-gray-400 text-xs mb-4">Jangan khawatir! Tonton iklan singkat untuk mendapatkan dana darurat sebesar <span className="text-yellow-400 font-bold">500 KOIN</span>.</p>
+               <p className="text-gray-400 text-xs mb-4">Jangan khawatir! Tonton iklan singkat untuk mendapatkan dana darurat sebesar <span className="text-yellow-400 font-bold">Rp100</span>.</p>
                <button onClick={() => triggerAd('RESCUE_FUND')} className="w-full py-3 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg font-bold text-white shadow-lg active:scale-95 flex items-center justify-center gap-2">
-                   <PlayCircle size={18} /> AMBIL 500 KOIN
+                   <PlayCircle size={18} /> AMBIL Rp5000
                </button>
            </div>
         </div>
@@ -1186,7 +1186,7 @@ const App: React.FC = () => {
                                     {isWheelSpinning ? 'SPINNING...' : 'SPIN NOW'}
                                 </button>
                             </div>
-                            <div className="text-xs text-gray-400 text-center">Menangkan hadiah Jackpot 50.000 Koin!</div>
+                            <div className="text-xs text-gray-400 text-center">Menangkan hadiah Jackpot Rp50.000.000!</div>
                         </div>
                     )}
 
@@ -1252,7 +1252,7 @@ const App: React.FC = () => {
                             <div className="bg-blue-900/40 p-4 rounded-lg border border-blue-500 flex flex-col items-center gap-2 text-center">
                                 <Share2 size={32} className="text-blue-300" />
                                 <h3 className="text-lg font-bold text-blue-200">UNDANG TEMAN</h3>
-                                <p className="text-xs text-gray-300">Bagikan kode Anda ke teman. Saat mereka memasukkan kode ini, Anda berdua mendapatkan 10.000 koin!</p>
+                                <p className="text-xs text-gray-300">Bagikan kode Anda ke teman. Saat mereka memasukkan kode ini, Anda berdua mendapatkan Rp10.000!</p>
                             </div>
                             
                             <div className="bg-black/30 p-3 rounded border border-white/10">
